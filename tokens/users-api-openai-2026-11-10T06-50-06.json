@@ -1,0 +1,255 @@
+{
+  "runId": "users-api-openai-2026-11-10T06-50-06",
+  "task": "users-api",
+  "driver": "openai",
+  "model": "openai/gpt-5.5",
+  "mode": "jit",
+  "baseline": {
+    "definition": "Same task, same driver, context fetchers and compaction disabled: whole workspace + full standards document front-loaded into the system prompt, raw tool output, no history compaction.",
+    "method": "shadow baseline on the same trajectory; baseline and actual both counted with local-tokenizer-estimate"
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "actualInputTokens": 1196,
+      "providerReportedInputTokens": 1053,
+      "baselineInputTokens": 5260,
+      "outputTokens": 27,
+      "costUsd": 0.006075,
+      "tools": [
+        "api_map"
+      ],
+      "reductionPct": 77.3
+    },
+    {
+      "turn": 2,
+      "actualInputTokens": 1336,
+      "providerReportedInputTokens": 1203,
+      "baselineInputTokens": 5400,
+      "outputTokens": 128,
+      "costUsd": 0.009855,
+      "tools": [
+        "list_files",
+        "list_files",
+        "read_standard",
+        "read_standard",
+        "read_standard",
+        "read_standard"
+      ],
+      "reductionPct": 75.3
+    },
+    {
+      "turn": 3,
+      "actualInputTokens": 2548,
+      "providerReportedInputTokens": 2501,
+      "baselineInputTokens": 6612,
+      "outputTokens": 126,
+      "costUsd": 0.016285,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 61.5
+    },
+    {
+      "turn": 4,
+      "actualInputTokens": 5104,
+      "providerReportedInputTokens": 5131,
+      "baselineInputTokens": 9168,
+      "outputTokens": 1731,
+      "costUsd": 0.070673,
+      "tools": [
+        "write_file"
+      ],
+      "reductionPct": 44.3
+    },
+    {
+      "turn": 5,
+      "actualInputTokens": 5046,
+      "providerReportedInputTokens": 5083,
+      "baselineInputTokens": 10793,
+      "outputTokens": 103,
+      "costUsd": 0.028505,
+      "tools": [
+        "read_file"
+      ],
+      "reductionPct": 53.2
+    },
+    {
+      "turn": 6,
+      "actualInputTokens": 7024,
+      "providerReportedInputTokens": 7071,
+      "baselineInputTokens": 12771,
+      "outputTokens": 40,
+      "costUsd": 0.015819,
+      "tools": [
+        "run_tests"
+      ],
+      "reductionPct": 45
+    },
+    {
+      "turn": 7,
+      "actualInputTokens": 7219,
+      "providerReportedInputTokens": 7276,
+      "baselineInputTokens": 14059,
+      "outputTokens": 1874,
+      "costUsd": 0.062648,
+      "tools": [
+        "write_file"
+      ],
+      "reductionPct": 48.7
+    },
+    {
+      "turn": 8,
+      "actualInputTokens": 7116,
+      "providerReportedInputTokens": 7183,
+      "baselineInputTokens": 15425,
+      "outputTokens": 31,
+      "costUsd": 0.006893,
+      "tools": [
+        "read_file"
+      ],
+      "reductionPct": 53.9
+    },
+    {
+      "turn": 9,
+      "actualInputTokens": 8823,
+      "providerReportedInputTokens": 8900,
+      "baselineInputTokens": 17132,
+      "outputTokens": 210,
+      "costUsd": 0.020848,
+      "tools": [
+        "edit_file"
+      ],
+      "reductionPct": 48.5
+    },
+    {
+      "turn": 10,
+      "actualInputTokens": 8760,
+      "providerReportedInputTokens": 8847,
+      "baselineInputTokens": 17215,
+      "outputTokens": 64,
+      "costUsd": 0.039243,
+      "tools": [
+        "read_file"
+      ],
+      "reductionPct": 49.1
+    },
+    {
+      "turn": 11,
+      "actualInputTokens": 8979,
+      "providerReportedInputTokens": 9076,
+      "baselineInputTokens": 17434,
+      "outputTokens": 53,
+      "costUsd": 0.007802,
+      "tools": [
+        "edit_file"
+      ],
+      "reductionPct": 48.5
+    },
+    {
+      "turn": 12,
+      "actualInputTokens": 8883,
+      "providerReportedInputTokens": 8990,
+      "baselineInputTokens": 17498,
+      "outputTokens": 22,
+      "costUsd": 0.006442,
+      "tools": [
+        "run_tests"
+      ],
+      "reductionPct": 49.2
+    },
+    {
+      "turn": 13,
+      "actualInputTokens": 8948,
+      "providerReportedInputTokens": 9065,
+      "baselineInputTokens": 17659,
+      "outputTokens": 14,
+      "costUsd": 0.006577,
+      "tools": [
+        "run_checks"
+      ],
+      "reductionPct": 49.3
+    },
+    {
+      "turn": 14,
+      "actualInputTokens": 9149,
+      "providerReportedInputTokens": 9276,
+      "baselineInputTokens": 18146,
+      "outputTokens": 260,
+      "costUsd": 0.015012,
+      "tools": [
+        "edit_file"
+      ],
+      "reductionPct": 49.6
+    },
+    {
+      "turn": 15,
+      "actualInputTokens": 7441,
+      "providerReportedInputTokens": 7578,
+      "baselineInputTokens": 18286,
+      "outputTokens": 14,
+      "costUsd": 0.008358,
+      "tools": [
+        "run_checks"
+      ],
+      "reductionPct": 59.3
+    },
+    {
+      "turn": 16,
+      "actualInputTokens": 7610,
+      "providerReportedInputTokens": 7757,
+      "baselineInputTokens": 18745,
+      "outputTokens": 14,
+      "costUsd": 0.009253,
+      "tools": [
+        "run_tests"
+      ],
+      "reductionPct": 59.4
+    },
+    {
+      "turn": 17,
+      "actualInputTokens": 7592,
+      "providerReportedInputTokens": 7749,
+      "baselineInputTokens": 18897,
+      "outputTokens": 14,
+      "costUsd": 0.009213,
+      "tools": [
+        "contract_status"
+      ],
+      "reductionPct": 59.8
+    },
+    {
+      "turn": 18,
+      "actualInputTokens": 7615,
+      "providerReportedInputTokens": 7782,
+      "baselineInputTokens": 18920,
+      "outputTokens": 121,
+      "costUsd": 0.00798,
+      "tools": [
+        "finish"
+      ],
+      "reductionPct": 59.8
+    }
+  ],
+  "totals": {
+    "turns": 18,
+    "baselineInputTokens": 259420,
+    "actualInputTokens": 120389,
+    "providerReportedInputTokens": 121521,
+    "reductionPct": 53.6,
+    "peakBaselineContext": 18920,
+    "peakActualContext": 9149,
+    "outputTokens": 4846,
+    "costUsd": 0.3475
+  },
+  "mechanisms": [
+    "JIT context: no repository content at session start; api_map / outline / read_file(line ranges) / search / read_standard fetch on demand",
+    "compact tool returns: pass/fail lines and summaries; raw logs written to runs/<run>/logs and referenced by path",
+    "history compaction: older tool results shrink to one line, older write arguments shrink to a size marker",
+    "rules live in hooks/checks (zero prompt tokens until they fire); system prompt is ~12 lines"
+  ]
+}

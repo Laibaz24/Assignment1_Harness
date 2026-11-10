@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-10T07:17:17.177Z",
+  "ok": false,
+  "steps": [
+    {
+      "step": "load run",
+      "status": "fail",
+      "detail": "no report at runs/users-api-openai-2026-11-10T06-50-06/report.json"
+    }
+  ]
+}
