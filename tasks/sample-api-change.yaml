@@ -1,0 +1,12 @@
+# Brownfield task. Provider-neutral. Placeholder until the official sample repo is published:
+# point `source` at the provided repository and rewrite goal/behaviours; nothing else changes.
+id: sample-api-change
+mode: brownfield
+source: tests/fixtures/sample-api
+target: generated/sample-api
+goal: Add an archive status to products without breaking the existing API contract.
+behaviours:
+  - Products gain a status field with values active | archived; new products default to active.
+  - PATCH /v1/products/:id can set status.
+  - GET /v1/products accepts an optional status filter; an unknown status is a 422 problem.
+  - Existing routes, status codes and request/response fields keep working unchanged.

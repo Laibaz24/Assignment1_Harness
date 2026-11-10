@@ -1,0 +1,42 @@
+{
+  "name": "ts-api-harness",
+  "version": "1.0.0",
+  "description": "Agent harness that governs TypeScript REST API work: driver-agnostic loop, blocking hooks, observed-red gate, deterministic API standards checks, harness-owned shipping.",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "harness": "bin/harness.mjs"
+  },
+  "scripts": {
+    "setup": "npm install && npm run selftest",
+    "harness": "node bin/harness.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run --root . --dir tests/unit",
+    "selftest": "npm run typecheck && npm test",
+    "demo:greenfield": "node bin/harness.mjs run --task tasks/users-api.yaml --driver replay",
+    "demo:brownfield": "node bin/harness.mjs run --task tasks/sample-api-change.yaml --driver replay",
+    "check:users": "node bin/harness.mjs check --api ./generated/users-api"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0",
+    "commander": "^14.0.0",
+    "express": "^5.1.0",
+    "gpt-tokenizer": "^3.0.0",
+    "openai": "^7.0.0",
+    "ts-morph": "^28.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "~5.9.3",
+    "yaml": "^2.8.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.0",
+    "@types/supertest": "^6.0.3",
+    "supertest": "^7.1.0",
+    "vitest": "^4.0.0"
+  }
+}

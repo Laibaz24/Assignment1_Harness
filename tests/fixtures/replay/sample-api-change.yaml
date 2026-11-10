@@ -1,0 +1,32 @@
+# Replay script for tasks/sample-api-change.yaml (brownfield). Deterministic tool calls
+# through the real loop, hooks, contract snapshot and checks.
+steps:
+  - say: Scope the change from the route/test map instead of reading the repo.
+    calls:
+      - { tool: api_map }
+  - calls:
+      - { tool: outline, args: { path: src/schemas/products.ts } }
+      - { tool: read_standard, args: { id: contract-drift } }
+  - say: Editing source before a red test must be refused.
+    calls:
+      - tool: edit_file
+        args:
+          path: src/schemas/products.ts
+          oldText: "  categoryId: z.uuid().nullable(),\n"
+          newText: "  categoryId: z.uuid().nullable(),\n  status: z.enum(['active', 'archived']),\n"
+  - say: Test first.
+    calls:
+      - { tool: write_file, args: { path: tests/products-status.test.ts }, contentFrom: sample-api-change/tests/products-status.test.ts }
+  - calls:
+      - { tool: run_tests, args: { files: [tests/products-status.test.ts] } }
+  - say: Red observed; apply the change.
+    calls:
+      - { tool: write_file, args: { path: src/schemas/products.ts }, contentFrom: sample-api-change/src/schemas/products.ts }
+      - { tool: write_file, args: { path: src/store/products.ts }, contentFrom: sample-api-change/src/store/products.ts }
+      - { tool: write_file, args: { path: src/routes/products.ts }, contentFrom: sample-api-change/src/routes/products.ts }
+  - calls:
+      - { tool: run_tests }
+  - calls:
+      - { tool: run_checks }
+  - calls:
+      - { tool: finish, args: { summary: "Products gain status (active|archived, default active), settable via PATCH, filterable on list. Additive contract change only." } }

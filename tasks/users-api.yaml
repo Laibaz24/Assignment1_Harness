@@ -1,0 +1,20 @@
+# Greenfield task. Provider-neutral: no model, provider, prompt format or tool schema.
+# Placeholder until the official task file is published; replace freely, the harness only reads this schema.
+id: users-api
+mode: greenfield
+target: generated/users-api
+goal: Build a versioned REST API for managing users.
+resource:
+  name: user
+  plural: users
+  fields:
+    - { name: email, type: email, required: true, unique: true }
+    - { name: name, type: string, required: true, min: 1, max: 100 }
+    - { name: role, type: enum, values: [admin, member], default: member }
+behaviours:
+  - List users with cursor pagination (cursor, limit 1-100) and an optional role filter.
+  - Create a user; 201 with Location; 409 on duplicate email; honour Idempotency-Key on retries.
+  - Get a user by id; 404 if missing.
+  - Partially update a user with PATCH; 422 on invalid or empty patch; 409 on duplicate email.
+  - Delete a user; 204; 404 if missing.
+  - Every error is an RFC 7807 problem+json response.

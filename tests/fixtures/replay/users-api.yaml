@@ -1,0 +1,43 @@
+# Replay script for tasks/users-api.yaml (greenfield). Not a model: a deterministic
+# sequence of tool calls played through the real loop, hooks and checks.
+# It deliberately includes two writes the hooks must refuse.
+steps:
+  - say: Map the scaffold first.
+    calls:
+      - { tool: api_map }
+  - calls:
+      - { tool: read_standard, args: { id: testing } }
+      - { tool: outline, args: { path: src/lib/problem.ts } }
+  - say: Try to write source before any test exists (must be refused by observed-red).
+    calls:
+      - { tool: write_file, args: { path: src/schemas/users.ts }, contentFrom: users-api/src/schemas/users.ts }
+  - say: Test first.
+    calls:
+      - { tool: write_file, args: { path: tests/users.test.ts }, contentFrom: users-api/tests/users.test.ts }
+  - calls:
+      - { tool: run_tests }
+  - say: Red observed by the harness runner; now the source.
+    calls:
+      - { tool: write_file, args: { path: src/schemas/users.ts }, contentFrom: users-api/src/schemas/users.ts }
+      - { tool: write_file, args: { path: src/store/users.ts }, contentFrom: users-api/src/store/users.ts }
+  - say: An escape hatch must be refused before it reaches disk.
+    calls:
+      - { tool: write_file, args: { path: src/routes/users.ts, content: "export const handler = (x: any) => x!;\n" } }
+  - calls:
+      - { tool: write_file, args: { path: src/routes/users.ts }, contentFrom: users-api/src/routes/users.ts }
+      - tool: edit_file
+        args:
+          path: src/app.ts
+          oldText: "import { errorHandler, notFoundHandler } from './lib/problem';\n"
+          newText: "import { errorHandler, notFoundHandler } from './lib/problem';\nimport { usersRouter } from './routes/users';\n"
+      - tool: edit_file
+        args:
+          path: src/app.ts
+          oldText: "  // Mount resource routers here, e.g. app.use(usersRouter());\n"
+          newText: "  app.use(usersRouter());\n"
+  - calls:
+      - { tool: run_tests }
+  - calls:
+      - { tool: run_checks }
+  - calls:
+      - { tool: finish, args: { summary: "Users API: schemas, in-memory store, router with cursor pagination, idempotent create, RFC 7807 errors; 14 tests." } }
