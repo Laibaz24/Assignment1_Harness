@@ -1,0 +1,12 @@
+RUN  v4.1.12 C:/Users/Laiba Zahid/OneDrive - Software Finder/Documents/Assignment1/generated/sample-api
+
+ ✓ tests/categories.test.ts (2 tests) 188ms
+ ✓ tests/products-status.test.ts (3 tests) 199ms
+ ✓ tests/products.test.ts (4 tests) 248ms
+
+ Test Files  3 passed (3)
+      Tests  9 passed (9)
+   Start at  16:30:57
+   Duration  2.48s (transform 523ms, setup 0ms, import 4.94s, tests 636ms, environment 1ms)
+
+JSON report written to C:/Users/LAIBAZ~1/AppData/Local/Temp/harness-vitest-oLXOEd/report.json

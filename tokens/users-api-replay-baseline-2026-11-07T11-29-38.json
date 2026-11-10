@@ -1,0 +1,142 @@
+{
+  "runId": "users-api-replay-baseline-2026-11-07T11-29-38",
+  "task": "users-api",
+  "driver": "replay",
+  "model": "scripted-replay",
+  "mode": "baseline",
+  "baseline": {
+    "definition": "Same task, same driver, context fetchers and compaction disabled: whole workspace + full standards document front-loaded into the system prompt, raw tool output, no history compaction.",
+    "method": "measured (this run is the baseline)"
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "actualInputTokens": 5233,
+      "baselineInputTokens": 5233,
+      "outputTokens": 16,
+      "tools": [
+        "api_map"
+      ],
+      "reductionPct": 0
+    },
+    {
+      "turn": 2,
+      "actualInputTokens": 5378,
+      "baselineInputTokens": 5378,
+      "outputTokens": 24,
+      "tools": [
+        "read_standard",
+        "outline"
+      ],
+      "reductionPct": 0
+    },
+    {
+      "turn": 3,
+      "actualInputTokens": 5856,
+      "baselineInputTokens": 5856,
+      "outputTokens": 409,
+      "tools": [
+        "write_file"
+      ],
+      "reductionPct": 0
+    },
+    {
+      "turn": 4,
+      "actualInputTokens": 6327,
+      "baselineInputTokens": 6327,
+      "outputTokens": 1724,
+      "tools": [
+        "write_file"
+      ],
+      "reductionPct": 0
+    },
+    {
+      "turn": 5,
+      "actualInputTokens": 8138,
+      "baselineInputTokens": 8138,
+      "outputTokens": 11,
+      "tools": [
+        "run_tests"
+      ],
+      "reductionPct": 0
+    },
+    {
+      "turn": 6,
+      "actualInputTokens": 8550,
+      "baselineInputTokens": 8550,
+      "outputTokens": 886,
+      "tools": [
+        "write_file",
+        "write_file"
+      ],
+      "reductionPct": 0
+    },
+    {
+      "turn": 7,
+      "actualInputTokens": 9463,
+      "baselineInputTokens": 9463,
+      "outputTokens": 46,
+      "tools": [
+        "write_file"
+      ],
+      "reductionPct": 0
+    },
+    {
+      "turn": 8,
+      "actualInputTokens": 9546,
+      "baselineInputTokens": 9546,
+      "outputTokens": 643,
+      "tools": [
+        "write_file",
+        "edit_file",
+        "edit_file"
+      ],
+      "reductionPct": 0
+    },
+    {
+      "turn": 9,
+      "actualInputTokens": 10230,
+      "baselineInputTokens": 10230,
+      "outputTokens": 11,
+      "tools": [
+        "run_tests"
+      ],
+      "reductionPct": 0
+    },
+    {
+      "turn": 10,
+      "actualInputTokens": 10381,
+      "baselineInputTokens": 10381,
+      "outputTokens": 11,
+      "tools": [
+        "run_checks"
+      ],
+      "reductionPct": 0
+    },
+    {
+      "turn": 11,
+      "actualInputTokens": 10895,
+      "baselineInputTokens": 10895,
+      "outputTokens": 42,
+      "tools": [
+        "finish"
+      ],
+      "reductionPct": 0
+    }
+  ],
+  "totals": {
+    "turns": 11,
+    "baselineInputTokens": 89997,
+    "actualInputTokens": 89997,
+    "reductionPct": 0,
+    "peakBaselineContext": 10895,
+    "peakActualContext": 10895,
+    "outputTokens": 3823
+  },
+  "mechanisms": [
+    "JIT context: no repository content at session start; api_map / outline / read_file(line ranges) / search / read_standard fetch on demand",
+    "compact tool returns: pass/fail lines and summaries; raw logs written to runs/<run>/logs and referenced by path",
+    "history compaction: older tool results shrink to one line, older write arguments shrink to a size marker",
+    "rules live in hooks/checks (zero prompt tokens until they fire); system prompt is ~12 lines"
+  ]
+}

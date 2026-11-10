@@ -1,0 +1,56 @@
+ACCEPTED: all gates green.
+tests         pass  1/1 test files pass
+observed-red  pass  2/2 written source files have an observed-red covering test
+standards     pass  zod-boundary pass 5/5 handlers | zod-infer pass 7/7 types | problem-json pass 11/11 error paths | problem-json:runtime pass 7/7 probes | tsc --strict pass 0 errors | strict-types pass 7/7 files | rest-conventions pass 5/5 routes | contract-drift n/a no baseline contract (greenfield, or pass --contract <file>) | orm-explicit-select n/a no Prisma/Drizzle queries on users | no-console pass 6/6 files
+verdict 100% -> all checks green
+--- test output ---
+RUN  v4.1.12 C:/Users/Laiba Zahid/OneDrive - Software Finder/Documents/Assignment1/generated/users-api
+
+ ✓ tests/users.test.ts (4 tests) 133ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  11:51:46
+   Duration  1.10s (transform 98ms, setup 0ms, import 704ms, tests 133ms, environment 0ms)
+
+JSON report written to C:/Users/LAIBAZ~1/AppData/Local/Temp/harness-vitest-WBPqju/report.json
+--- standards check ---
+# per-file results (C:/Users/Laiba Zahid/OneDrive - Software Finder/Documents/Assignment1/generated/users-api)
+zod-boundary          pass     src/routes/users.ts
+zod-infer             pass     src/lib/idempotency.ts
+zod-infer             pass     src/lib/pagination.ts
+zod-infer             pass     src/lib/problem.ts
+zod-infer             pass     src/routes/users.ts
+problem-json          pass     src/lib/problem.ts
+problem-json          pass     src/lib/idempotency.ts
+problem-json          pass     src/lib/pagination.ts
+problem-json          pass     src/routes/users.ts
+problem-json:runtime  pass     runtime
+tsc --strict          pass     tsconfig.json
+strict-types          pass     src/app.ts
+strict-types          pass     src/server.ts
+strict-types          pass     src/lib/idempotency.ts
+strict-types          pass     src/lib/pagination.ts
+strict-types          pass     src/lib/problem.ts
+strict-types          pass     src/routes/users.ts
+strict-types          pass     tests/users.test.ts
+rest-conventions      pass     src/routes/users.ts
+no-console            pass     src/app.ts
+no-console            pass     src/server.ts
+no-console            pass     src/lib/idempotency.ts
+no-console            pass     src/lib/pagination.ts
+no-console            pass     src/lib/problem.ts
+no-console            pass     src/routes/users.ts
+
+# summary
+zod-boundary          pass     5/5 handlers
+zod-infer             pass     7/7 types
+problem-json          pass     11/11 error paths
+problem-json:runtime  pass     7/7 probes
+tsc --strict          pass     0 errors
+strict-types          pass     7/7 files
+rest-conventions      pass     5/5 routes
+contract-drift        n/a      no baseline contract (greenfield, or pass --contract <file>)
+orm-explicit-select   n/a      no Prisma/Drizzle queries on users
+no-console            pass     6/6 files
+verdict               100%     -> all checks green

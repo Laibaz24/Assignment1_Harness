@@ -1,0 +1,22 @@
+run users-api-replay-baseline-2026-11-07T11-29-38
+driver=replay model=scripted-replay mode=baseline (fetchers+compaction off) workspace=generated/users-api
+registry: 12 tools, 2 extra rules, 0 extra hooks
+[turn 1] api_map -> ok
+[turn 2] read_standard -> ok
+[turn 2] outline -> ok
+[turn 3] write_file src/schemas/users.ts -> BLOCKED by observed-red
+[turn 4] write_file tests/users.test.ts -> ok (+hook feedback)
+[turn 5] run_tests -> ok
+[turn 6] write_file src/schemas/users.ts -> ok
+[turn 6] write_file src/store/users.ts -> ok
+[turn 7] write_file src/routes/users.ts -> BLOCKED by escape-hatches
+[turn 8] write_file src/routes/users.ts -> ok
+[turn 8] edit_file src/app.ts -> ok
+[turn 8] edit_file src/app.ts -> ok
+[turn 9] run_tests -> ok
+[turn 10] run_checks -> ok
+[turn 11] finish -> ok
+[turn 11] finish -> gates GREEN
+verdict: GREEN after 11 turns
+token report: tokens/users-api-replay-baseline-2026-11-07T11-29-38.json
+run report: runs/users-api-replay-baseline-2026-11-07T11-29-38/report.md

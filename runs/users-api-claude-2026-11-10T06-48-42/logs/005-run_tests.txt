@@ -1,0 +1,175 @@
+RUN  v4.1.12 C:/Users/Laiba Zahid/OneDrive - Software Finder/Documents/Assignment1/generated/users-api
+
+ ❯ tests/users.test.ts (8 tests | 8 failed) 196ms
+     × creates a user with 201, Location and default role 109ms
+     × rejects invalid create with 422 9ms
+     × returns 409 on duplicate email 10ms
+     × honours Idempotency-Key 10ms
+     × gets a user and 404s when missing 10ms
+     × lists with cursor pagination and role filter 25ms
+     × patches a user 12ms
+     × deletes a user 9ms
+
+ Test Files  1 failed (1)
+      Tests  8 failed (8)
+   Start at  11:49:39
+   Duration  1.69s (transform 97ms, setup 0ms, import 950ms, tests 196ms, environment 0ms)
+
+JSON report written to C:/Users/LAIBAZ~1/AppData/Local/Temp/harness-vitest-CCPJSy/report.json
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/users.test.ts > users API > creates a user with 201, Location and default role
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ tests/users.test.ts:24:24
+     22|     const app = createApp();
+     23|     const res = await create(app, { email: 'a@example.com', name: 'Ann…
+     24|     expect(res.status).toBe(201);
+       |                        ^
+     25|     expect(res.body.role).toBe('member');
+     26|     expect(res.headers['location']).toBe(`/v1/users/${res.body.id}`);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  tests/users.test.ts > users API > rejects invalid create with 422
+AssertionError: expected 404 to be 422 // Object.is equality
+
+- Expected
++ Received
+
+- 422
++ 404
+
+ ❯ expectProblem tests/users.test.ts:11:22
+      9|
+     10| async function expectProblem(res: request.Response, status: number): P…
+     11|   expect(res.status).toBe(status);
+       |                      ^
+     12|   expect(res.headers['content-type']).toMatch(/^application\/problem\+…
+     13|   expect(ProblemSchema.parse(res.body).status).toBe(status);
+ ❯ tests/users.test.ts:31:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  tests/users.test.ts > users API > returns 409 on duplicate email
+AssertionError: expected 404 to be 409 // Object.is equality
+
+- Expected
++ Received
+
+- 409
++ 404
+
+ ❯ expectProblem tests/users.test.ts:11:22
+      9|
+     10| async function expectProblem(res: request.Response, status: number): P…
+     11|   expect(res.status).toBe(status);
+       |                      ^
+     12|   expect(res.headers['content-type']).toMatch(/^application\/problem\+…
+     13|   expect(ProblemSchema.parse(res.body).status).toBe(status);
+ ❯ tests/users.test.ts:39:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  tests/users.test.ts > users API > honours Idempotency-Key
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ tests/users.test.ts:47:27
+     45|     const first = await request(app).post('/v1/users').set('Idempotenc…
+     46|     const second = await request(app).post('/v1/users').set('Idempoten…
+     47|     expect(second.status).toBe(201);
+       |                           ^
+     48|     expect(second.body.id).toBe(first.body.id);
+     49|     const other = await request(app)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  tests/users.test.ts > users API > gets a user and 404s when missing
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ tests/users.test.ts:60:24
+     58|     const created = await create(app, { email: 'a@example.com', name: …
+     59|     const res = await request(app).get(`/v1/users/${created.body.id}`);
+     60|     expect(res.status).toBe(200);
+       |                        ^
+     61|     expect(res.body.email).toBe('a@example.com');
+     62|     await expectProblem(await request(app).get('/v1/users/missing'), 4…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  tests/users.test.ts > users API > lists with cursor pagination and role filter
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ tests/users.test.ts:71:26
+     69|     }
+     70|     const page1 = await request(app).get('/v1/users?limit=2');
+     71|     expect(page1.status).toBe(200);
+       |                          ^
+     72|     expect(page1.body.data).toHaveLength(2);
+     73|     expect(typeof page1.body.nextCursor).toBe('string');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  tests/users.test.ts > users API > patches a user
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ tests/users.test.ts:92:24
+     90|     await create(app, { email: 'b@example.com', name: 'Bob' });
+     91|     const res = await request(app).patch(`/v1/users/${a.body.id}`).sen…
+     92|     expect(res.status).toBe(200);
+       |                        ^
+     93|     expect(res.body.name).toBe('Anna');
+     94|     expect(res.body.role).toBe('admin');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  tests/users.test.ts > users API > deletes a user
+AssertionError: expected 404 to be 204 // Object.is equality
+
+- Expected
++ Received
+
+- 204
++ 404
+
+ ❯ tests/users.test.ts:108:24
+    106|     const a = await create(app, { email: 'a@example.com', name: 'Ann' …
+    107|     const res = await request(app).delete(`/v1/users/${a.body.id}`);
+    108|     expect(res.status).toBe(204);
+       |                        ^
+    109|     expect(res.text).toBe('');
+    110|     await expectProblem(await request(app).delete(`/v1/users/${a.body.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯

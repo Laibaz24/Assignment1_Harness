@@ -1,0 +1,27 @@
+$ vitest run --root C:\Users\Laiba Zahid\OneDrive - Software Finder\Documents\Assignment1\generated\users-api --reporter=default --reporter=json --outputFile.json=C:\Users\LAIBAZ~1\AppData\Local\Temp\harness-vitest-jJGILb\report.json
+exit 1
+RUN  v4.1.12 C:/Users/Laiba Zahid/OneDrive - Software Finder/Documents/Assignment1/generated/users-api
+
+ ❯ tests/users.test.ts (0 test)
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  11:45:19
+   Duration  1.40s (transform 86ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+
+JSON report written to C:/Users/LAIBAZ~1/AppData/Local/Temp/harness-vitest-jJGILb/report.json
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/users.test.ts [ tests/users.test.ts ]
+Error: Cannot find module '../src/schemas/users' imported from C:/Users/Laiba Zahid/OneDrive - Software Finder/Documents/Assignment1/generated/users-api/tests/users.test.ts
+ ❯ tests/users.test.ts:10:1
+      8| import { createApp } from '../src/app';
+      9| import { ProblemSchema } from '../src/lib/problem';
+     10| import { UserPageSchema, UserSchema } from '../src/schemas/users';
+       | ^
+     11|
+     12| const ada = { email: 'ada@example.com', name: 'Ada Lovelace' };
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯

@@ -1,0 +1,58 @@
+RUN  v4.1.12 C:/Users/Laiba Zahid/OneDrive - Software Finder/Documents/Assignment1/generated/sample-api
+
+ ❯ tests/products.test.ts (5 tests | 2 failed) 123ms
+     ✓ creates a product with 201 54ms
+     ✓ rejects duplicate sku with 409 and invalid body with 422 18ms
+     ✓ paginates with a cursor 23ms
+     × gets, patches and deletes a product 8ms
+     × filters products by status and rejects unknown status filters 19ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 3 passed (5)
+   Start at  11:50:07
+   Duration  1.17s (transform 150ms, setup 0ms, import 714ms, tests 123ms, environment 0ms)
+
+JSON report written to C:/Users/LAIBAZ~1/AppData/Local/Temp/harness-vitest-ZmyWRz/report.json
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/products.test.ts > products API /v1/products > gets, patches and deletes a product
+AssertionError: expected undefined to be 'active' // Object.is equality
+
+- Expected:
+"active"
+
++ Received:
+undefined
+
+ ❯ tests/products.test.ts:48:28
+     46|     const app = createApp();
+     47|     const created = ProductSchema.parse((await request(app).post('/v1/…
+     48|     expect(created.status).toBe('active');
+       |                            ^
+     49|     expect((await request(app).get(`/v1/products/${created.id}`)).stat…
+     50|     const patched = await request(app).patch(`/v1/products/${created.i…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/products.test.ts > products API /v1/products > filters products by status and rejects unknown status filters
+AssertionError: expected [ …(2) ] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+  [
+    "eb87773b-fa62-4fed-bb62-99ef2128759d",
++   "08b9c1dd-e769-453c-b633-2b6098415273",
+  ]
+
+ ❯ tests/products.test.ts:65:58
+     63|
+     64|     const activePage = ProductPageSchema.parse((await request(app).get…
+     65|     expect(activePage.data.map((product) => product.id)).toEqual([acti…
+       |                                                          ^
+     66|
+     67|     const archivedPage = ProductPageSchema.parse((await request(app).g…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯

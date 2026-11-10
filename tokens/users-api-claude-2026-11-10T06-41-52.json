@@ -1,0 +1,545 @@
+{
+  "runId": "users-api-claude-2026-11-10T06-41-52",
+  "task": "users-api",
+  "driver": "claude",
+  "model": "anthropic/claude-sonnet-5.5",
+  "mode": "jit",
+  "baseline": {
+    "definition": "Same task, same driver, context fetchers and compaction disabled: whole workspace + full standards document front-loaded into the system prompt, raw tool output, no history compaction.",
+    "method": "shadow baseline on the same trajectory, counted with local-tokenizer-estimate"
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "actualInputTokens": 2273,
+      "baselineInputTokens": 5232,
+      "outputTokens": 74,
+      "costUsd": 0.005286,
+      "tools": [
+        "api_map",
+        "read_standard"
+      ],
+      "reductionPct": 56.6
+    },
+    {
+      "turn": 2,
+      "actualInputTokens": 3072,
+      "baselineInputTokens": 5611,
+      "outputTokens": 237,
+      "costUsd": 0.008514,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "list_files"
+      ],
+      "reductionPct": 45.3
+    },
+    {
+      "turn": 3,
+      "actualInputTokens": 6188,
+      "baselineInputTokens": 8130,
+      "outputTokens": 145,
+      "costUsd": 0.013826,
+      "tools": [
+        "read_standard",
+        "read_standard",
+        "read_file"
+      ],
+      "reductionPct": 23.9
+    },
+    {
+      "turn": 4,
+      "actualInputTokens": 4132,
+      "baselineInputTokens": 8911,
+      "outputTokens": 239,
+      "costUsd": 0.010654,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 53.6
+    },
+    {
+      "turn": 5,
+      "actualInputTokens": 6779,
+      "baselineInputTokens": 11363,
+      "outputTokens": 182,
+      "costUsd": 0.015378,
+      "tools": [
+        "read_file",
+        "read_file",
+        "list_files"
+      ],
+      "reductionPct": 40.3
+    },
+    {
+      "turn": 6,
+      "actualInputTokens": 4465,
+      "baselineInputTokens": 11905,
+      "outputTokens": 241,
+      "costUsd": 0.01134,
+      "tools": [
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 62.5
+    },
+    {
+      "turn": 7,
+      "actualInputTokens": 5977,
+      "baselineInputTokens": 13277,
+      "outputTokens": 158,
+      "costUsd": 0.013534,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 55
+    },
+    {
+      "turn": 8,
+      "actualInputTokens": 6198,
+      "baselineInputTokens": 14704,
+      "outputTokens": 151,
+      "costUsd": 0.013906,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 57.8
+    },
+    {
+      "turn": 9,
+      "actualInputTokens": 6787,
+      "baselineInputTokens": 16219,
+      "outputTokens": 112,
+      "costUsd": 0.014694,
+      "tools": [
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 58.2
+    },
+    {
+      "turn": 10,
+      "actualInputTokens": 6390,
+      "baselineInputTokens": 17327,
+      "outputTokens": 151,
+      "costUsd": 0.01429,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 63.1
+    },
+    {
+      "turn": 11,
+      "actualInputTokens": 7441,
+      "baselineInputTokens": 18998,
+      "outputTokens": 112,
+      "costUsd": 0.016002,
+      "tools": [
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 60.8
+    },
+    {
+      "turn": 12,
+      "actualInputTokens": 6912,
+      "baselineInputTokens": 20106,
+      "outputTokens": 148,
+      "costUsd": 0.015304,
+      "tools": [
+        "outline",
+        "outline"
+      ],
+      "reductionPct": 65.6
+    },
+    {
+      "turn": 13,
+      "actualInputTokens": 6150,
+      "baselineInputTokens": 20438,
+      "outputTokens": 241,
+      "costUsd": 0.01471,
+      "tools": [
+        "outline",
+        "outline",
+        "read_file"
+      ],
+      "reductionPct": 69.9
+    },
+    {
+      "turn": 14,
+      "actualInputTokens": 6545,
+      "baselineInputTokens": 20871,
+      "outputTokens": 284,
+      "costUsd": 0.01593,
+      "tools": [
+        "read_file",
+        "read_file",
+        "outline"
+      ],
+      "reductionPct": 68.6
+    },
+    {
+      "turn": 15,
+      "actualInputTokens": 8274,
+      "baselineInputTokens": 22295,
+      "outputTokens": 151,
+      "costUsd": 0.018058,
+      "tools": [
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 62.9
+    },
+    {
+      "turn": 16,
+      "actualInputTokens": 7826,
+      "baselineInputTokens": 23144,
+      "outputTokens": 326,
+      "costUsd": 0.018912,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 66.2
+    },
+    {
+      "turn": 17,
+      "actualInputTokens": 9369,
+      "baselineInputTokens": 24883,
+      "outputTokens": 197,
+      "costUsd": 0.020708,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 62.3
+    },
+    {
+      "turn": 18,
+      "actualInputTokens": 8805,
+      "baselineInputTokens": 25862,
+      "outputTokens": 211,
+      "costUsd": 0.01972,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 66
+    },
+    {
+      "turn": 19,
+      "actualInputTokens": 10087,
+      "baselineInputTokens": 27567,
+      "outputTokens": 151,
+      "costUsd": 0.021684,
+      "tools": [
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 63.4
+    },
+    {
+      "turn": 20,
+      "actualInputTokens": 9235,
+      "baselineInputTokens": 28383,
+      "outputTokens": 253,
+      "costUsd": 0.021,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 67.5
+    },
+    {
+      "turn": 21,
+      "actualInputTokens": 10715,
+      "baselineInputTokens": 30088,
+      "outputTokens": 197,
+      "costUsd": 0.0234,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 64.4
+    },
+    {
+      "turn": 22,
+      "actualInputTokens": 10151,
+      "baselineInputTokens": 31067,
+      "outputTokens": 211,
+      "costUsd": 0.022412,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 67.3
+    },
+    {
+      "turn": 23,
+      "actualInputTokens": 11433,
+      "baselineInputTokens": 32772,
+      "outputTokens": 197,
+      "costUsd": 0.024836,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 65.1
+    },
+    {
+      "turn": 24,
+      "actualInputTokens": 10869,
+      "baselineInputTokens": 33751,
+      "outputTokens": 252,
+      "costUsd": 0.024258,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 67.8
+    },
+    {
+      "turn": 25,
+      "actualInputTokens": 12151,
+      "baselineInputTokens": 35456,
+      "outputTokens": 197,
+      "costUsd": 0.026272,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 65.7
+    },
+    {
+      "turn": 26,
+      "actualInputTokens": 11587,
+      "baselineInputTokens": 36435,
+      "outputTokens": 239,
+      "costUsd": 0.025564,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 68.2
+    },
+    {
+      "turn": 27,
+      "actualInputTokens": 12869,
+      "baselineInputTokens": 38140,
+      "outputTokens": 197,
+      "costUsd": 0.027708,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 66.3
+    },
+    {
+      "turn": 28,
+      "actualInputTokens": 12305,
+      "baselineInputTokens": 39119,
+      "outputTokens": 267,
+      "costUsd": 0.02728,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 68.5
+    },
+    {
+      "turn": 29,
+      "actualInputTokens": 13587,
+      "baselineInputTokens": 40824,
+      "outputTokens": 197,
+      "costUsd": 0.029144,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 66.7
+    },
+    {
+      "turn": 30,
+      "actualInputTokens": 13023,
+      "baselineInputTokens": 41803,
+      "outputTokens": 236,
+      "costUsd": 0.028406,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 68.8
+    },
+    {
+      "turn": 31,
+      "actualInputTokens": 14305,
+      "baselineInputTokens": 43508,
+      "outputTokens": 197,
+      "costUsd": 0.03058,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 67.1
+    },
+    {
+      "turn": 32,
+      "actualInputTokens": 13741,
+      "baselineInputTokens": 44487,
+      "outputTokens": 255,
+      "costUsd": 0.030032,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 69.1
+    },
+    {
+      "turn": 33,
+      "actualInputTokens": 15023,
+      "baselineInputTokens": 46192,
+      "outputTokens": 197,
+      "costUsd": 0.032016,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 67.5
+    },
+    {
+      "turn": 34,
+      "actualInputTokens": 14459,
+      "baselineInputTokens": 47171,
+      "outputTokens": 249,
+      "costUsd": 0.031408,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 69.3
+    },
+    {
+      "turn": 35,
+      "actualInputTokens": 15741,
+      "baselineInputTokens": 48876,
+      "outputTokens": 197,
+      "costUsd": 0.033452,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 67.8
+    },
+    {
+      "turn": 36,
+      "actualInputTokens": 15177,
+      "baselineInputTokens": 49855,
+      "outputTokens": 249,
+      "costUsd": 0.032844,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 69.6
+    },
+    {
+      "turn": 37,
+      "actualInputTokens": 16459,
+      "baselineInputTokens": 51560,
+      "outputTokens": 197,
+      "costUsd": 0.034888,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 68.1
+    },
+    {
+      "turn": 38,
+      "actualInputTokens": 15895,
+      "baselineInputTokens": 52539,
+      "outputTokens": 229,
+      "costUsd": 0.03408,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 69.7
+    },
+    {
+      "turn": 39,
+      "actualInputTokens": 17177,
+      "baselineInputTokens": 54244,
+      "outputTokens": 197,
+      "costUsd": 0.036324,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 68.3
+    },
+    {
+      "turn": 40,
+      "actualInputTokens": 16613,
+      "baselineInputTokens": 55223,
+      "outputTokens": 251,
+      "costUsd": 0.035736,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 69.9
+    }
+  ],
+  "totals": {
+    "turns": 40,
+    "baselineInputTokens": 1198336,
+    "actualInputTokens": 406185,
+    "reductionPct": 66.1,
+    "peakBaselineContext": 55223,
+    "peakActualContext": 17177,
+    "outputTokens": 8172,
+    "costUsd": 0.8941
+  },
+  "mechanisms": [
+    "JIT context: no repository content at session start; api_map / outline / read_file(line ranges) / search / read_standard fetch on demand",
+    "compact tool returns: pass/fail lines and summaries; raw logs written to runs/<run>/logs and referenced by path",
+    "history compaction: older tool results shrink to one line, older write arguments shrink to a size marker",
+    "rules live in hooks/checks (zero prompt tokens until they fire); system prompt is ~12 lines"
+  ]
+}

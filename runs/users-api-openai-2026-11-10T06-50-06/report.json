@@ -1,0 +1,239 @@
+{
+  "runId": "users-api-openai-2026-11-10T06-50-06",
+  "task": "users-api",
+  "mode": "greenfield",
+  "driver": "openai",
+  "model": "openai/gpt-5.5",
+  "tokenMode": "jit",
+  "workspace": "generated/users-api",
+  "green": true,
+  "turns": 18,
+  "gates": [
+    {
+      "name": "tests",
+      "status": "pass",
+      "detail": "1/1 test files pass"
+    },
+    {
+      "name": "observed-red",
+      "status": "pass",
+      "detail": "2/2 written source files have an observed-red covering test"
+    },
+    {
+      "name": "standards",
+      "status": "pass",
+      "detail": "zod-boundary pass 5/5 handlers | zod-infer pass 7/7 types | problem-json pass 11/11 error paths | problem-json:runtime pass 7/7 probes | tsc --strict pass 0 errors | strict-types pass 7/7 files | rest-conventions pass 5/5 routes | contract-drift n/a no baseline contract (greenfield, or pass --contract <file>) | orm-explicit-select n/a no Prisma/Drizzle queries on users | no-console pass 6/6 files\nverdict 100% -> all checks green"
+    }
+  ],
+  "verdictPct": 100,
+  "writtenFiles": [
+    "src/app.ts",
+    "src/routes/users.ts",
+    "tests/users.test.ts"
+  ],
+  "redGreenLedger": [
+    {
+      "testFile": "tests/users.test.ts",
+      "status": "pass",
+      "at": "2026-11-10T06:51:47.665Z",
+      "everRed": true
+    }
+  ],
+  "hookBlocks": 0,
+  "hookEvents": [
+    {
+      "turn": 4,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 4,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 4,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 4,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 4,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 7,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 7,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 7,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "record",
+      "feedback": "observed red: tests/users.test.ts"
+    },
+    {
+      "turn": 7,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 7,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 9,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 9,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 9,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "record",
+      "feedback": "observed red: tests/users.test.ts"
+    },
+    {
+      "turn": 9,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 9,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 11,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 11,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 11,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "record",
+      "feedback": "observed red: tests/users.test.ts"
+    },
+    {
+      "turn": 11,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 11,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 14,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 14,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 14,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "record",
+      "feedback": "observed red: tests/users.test.ts"
+    },
+    {
+      "turn": 14,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 14,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "edit_file",
+      "decision": "pass"
+    }
+  ],
+  "honesty": {
+    "proven": [
+      "tests: 1/1 test files pass",
+      "observed-red: 2/2 written source files have an observed-red covering test",
+      "standards: zod-boundary pass 5/5 handlers | zod-infer pass 7/7 types | problem-json pass 11/11 error paths | problem-json:runtime pass 7/7 probes | tsc --strict pass 0 errors | strict-types pass 7/7 files | rest-conventions pass 5/5 routes | contract-drift n/a no baseline contract (greenfield, or pass --contract <file>) | orm-explicit-select n/a no Prisma/Drizzle queries on users | no-console pass 6/6 files"
+    ],
+    "failed": [],
+    "unproven": [],
+    "notApplicable": [
+      "contract-drift: no baseline contract (greenfield, or pass --contract <file>)",
+      "orm-explicit-select: no Prisma/Drizzle queries on users"
+    ]
+  },
+  "tokenReport": "tokens/users-api-openai-2026-11-10T06-50-06.json",
+  "contractSnapshot": null
+}

@@ -1,0 +1,237 @@
+{
+  "runId": "sample-api-change-replay-2026-11-07T11-30-40",
+  "task": "sample-api-change",
+  "mode": "brownfield",
+  "driver": "replay",
+  "model": "scripted-replay",
+  "tokenMode": "jit",
+  "workspace": "generated/sample-api",
+  "green": true,
+  "turns": 9,
+  "gates": [
+    {
+      "name": "tests",
+      "status": "pass",
+      "detail": "3/3 test files pass"
+    },
+    {
+      "name": "observed-red",
+      "status": "pass",
+      "detail": "3/3 written source files have an observed-red covering test"
+    },
+    {
+      "name": "standards",
+      "status": "pass",
+      "detail": "zod-boundary pass 8/8 handlers | zod-infer pass 10/10 types | problem-json pass 11/11 error paths | problem-json:runtime pass 10/10 probes | tsc --strict pass 0 errors | strict-types pass 14/14 files | rest-conventions pass 8/8 routes | contract-drift pass 8/8 routes (additive: GET /v1/products: compatible schema change; POST /v1/products: compatible schema change; GET /v1/products/:id: compatible schema change; PATCH /v1/products/:id: compatible schema change) | orm-explicit-select n/a no Prisma/Drizzle queries on users | no-console pass 11/11 files\nverdict 100% -> all checks green"
+    }
+  ],
+  "verdictPct": 100,
+  "writtenFiles": [
+    "src/routes/products.ts",
+    "src/schemas/products.ts",
+    "src/store/products.ts",
+    "tests/products-status.test.ts"
+  ],
+  "redGreenLedger": [
+    {
+      "testFile": "tests/categories.test.ts",
+      "status": "pass",
+      "at": "2026-11-07T11:31:10.184Z",
+      "everRed": false
+    },
+    {
+      "testFile": "tests/products-status.test.ts",
+      "status": "pass",
+      "at": "2026-11-07T11:31:10.184Z",
+      "everRed": true
+    },
+    {
+      "testFile": "tests/products.test.ts",
+      "status": "pass",
+      "at": "2026-11-07T11:31:10.184Z",
+      "everRed": false
+    }
+  ],
+  "hookBlocks": 1,
+  "hookEvents": [
+    {
+      "turn": 3,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 3,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 3,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "block",
+      "feedback": "REFUSED src/schemas/products.ts: covering tests [tests/products.test.ts] have not been observed failing by the harness runner. Call run_tests; a covering test must fail before src/schemas/products.ts can change."
+    },
+    {
+      "turn": 4,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 4,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 4,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 4,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 4,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "record",
+      "feedback": "observed red: tests/products-status.test.ts"
+    },
+    {
+      "turn": 6,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "record",
+      "feedback": "observed red: tests/products-status.test.ts"
+    },
+    {
+      "turn": 6,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "record",
+      "feedback": "observed red: tests/products-status.test.ts"
+    },
+    {
+      "turn": 6,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "write_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "write_file",
+      "decision": "pass"
+    }
+  ],
+  "honesty": {
+    "proven": [
+      "tests: 3/3 test files pass",
+      "observed-red: 3/3 written source files have an observed-red covering test",
+      "standards: zod-boundary pass 8/8 handlers | zod-infer pass 10/10 types | problem-json pass 11/11 error paths | problem-json:runtime pass 10/10 probes | tsc --strict pass 0 errors | strict-types pass 14/14 files | rest-conventions pass 8/8 routes | contract-drift pass 8/8 routes (additive: GET /v1/products: compatible schema change; POST /v1/products: compatible schema change; GET /v1/products/:id: compatible schema change; PATCH /v1/products/:id: compatible schema change) | orm-explicit-select n/a no Prisma/Drizzle queries on users | no-console pass 11/11 files"
+    ],
+    "failed": [],
+    "unproven": [],
+    "notApplicable": [
+      "orm-explicit-select: no Prisma/Drizzle queries on users"
+    ]
+  },
+  "tokenReport": "tokens/sample-api-change-replay-2026-11-07T11-30-40.json",
+  "contractSnapshot": "runs/sample-api-change-replay-2026-11-07T11-30-40/contract.before.json"
+}

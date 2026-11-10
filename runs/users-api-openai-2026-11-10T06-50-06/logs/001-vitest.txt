@@ -1,0 +1,95 @@
+$ vitest run --root C:\Users\Laiba Zahid\OneDrive - Software Finder\Documents\Assignment1\generated\users-api --reporter=default --reporter=json --outputFile.json=C:\Users\LAIBAZ~1\AppData\Local\Temp\harness-vitest-7NjEWJ\report.json tests/users.test.ts
+exit 1
+RUN  v4.1.12 C:/Users/Laiba Zahid/OneDrive - Software Finder/Documents/Assignment1/generated/users-api
+
+ ❯ tests/users.test.ts (4 tests | 4 failed) 80ms
+     × creates, replays idempotent create, gets, lists, patches, and deletes a user 60ms
+     × returns conflicts for duplicate email and idempotency body mismatch 8ms
+     × validates list, create, and empty patch requests as problem details 5ms
+     × returns 409 when patch changes email to an existing user email 5ms
+
+ Test Files  1 failed (1)
+      Tests  4 failed (4)
+   Start at  11:50:38
+   Duration  1.03s (transform 63ms, setup 0ms, import 661ms, tests 80ms, environment 0ms)
+
+JSON report written to C:/Users/LAIBAZ~1/AppData/Local/Temp/harness-vitest-7NjEWJ/report.json
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/users.test.ts > users API > creates, replays idempotent create, gets, lists, patches, and deletes a user
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ tests/users.test.ts:24:28
+     22|       .send({ email: 'alice@example.com', name: 'Alice' });
+     23|
+     24|     expect(created.status).toBe(201);
+       |                            ^
+     25|     expect(created.headers.location).toMatch(/^\/v1\/users\//);
+     26|     expect(created.body).toMatchObject({ email: 'alice@example.com', n…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/users.test.ts > users API > returns conflicts for duplicate email and idempotency body mismatch
+Error: expected 201 "Created", got 404 "Not Found"
+ ❯ tests/users.test.ts:81:8
+     79|       .set('Idempotency-Key', 'create-carol-1')
+     80|       .send({ email: 'carol@example.com', name: 'Carol' })
+     81|       .expect(201);
+       |        ^
+     82|
+     83|     const duplicate = await request(app)
+ ❯ Test._assertStatus ../../node_modules/supertest/lib/test.js:535:14
+ ❯ ../../node_modules/supertest/lib/test.js:591:13
+ ❯ Test._assertFunction ../../node_modules/supertest/lib/test.js:568:13
+ ❯ Test.assert ../../node_modules/supertest/lib/test.js:432:23
+ ❯ localAssert ../../node_modules/supertest/lib/test.js:382:38
+ ❯ Server.<anonymous> ../../node_modules/supertest/lib/test.js:126:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/users.test.ts > users API > validates list, create, and empty patch requests as problem details
+AssertionError: expected 404 to be 422 // Object.is equality
+
+- Expected
++ Received
+
+- 422
++ 404
+
+ ❯ expectProblem tests/users.test.ts:9:27
+      7|
+      8| function expectProblem(response: request.Response, status: number): vo…
+      9|   expect(response.status).toBe(status);
+       |                           ^
+     10|   expect(response.headers['content-type']).toMatch(/^application\/prob…
+     11|   const problem = ProblemSchema.parse(response.body);
+ ❯ tests/users.test.ts:100:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/users.test.ts > users API > returns 409 when patch changes email to an existing user email
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ tests/users.test.ts:125:26
+    123|       .set('Idempotency-Key', 'create-eve-001')
+    124|       .send({ email: 'eve@example.com', name: 'Eve' });
+    125|     expect(first.status).toBe(201);
+       |                          ^
+    126|
+    127|     const second = await request(app)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯

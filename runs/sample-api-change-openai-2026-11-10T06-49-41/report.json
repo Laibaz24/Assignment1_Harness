@@ -1,0 +1,319 @@
+{
+  "runId": "sample-api-change-openai-2026-11-10T06-49-41",
+  "task": "sample-api-change",
+  "mode": "brownfield",
+  "driver": "openai",
+  "model": "openai/gpt-5.5",
+  "tokenMode": "jit",
+  "workspace": "generated/sample-api",
+  "green": true,
+  "turns": 19,
+  "gates": [
+    {
+      "name": "tests",
+      "status": "pass",
+      "detail": "2/2 test files pass"
+    },
+    {
+      "name": "observed-red",
+      "status": "pass",
+      "detail": "3/3 written source files have an observed-red covering test"
+    },
+    {
+      "name": "standards",
+      "status": "pass",
+      "detail": "zod-boundary pass 8/8 handlers | zod-infer pass 11/11 types | problem-json pass 11/11 error paths | problem-json:runtime pass 10/10 probes | tsc --strict pass 0 errors | strict-types pass 13/13 files | rest-conventions pass 8/8 routes | contract-drift pass 8/8 routes (additive: GET /v1/products: compatible schema change; POST /v1/products: compatible schema change; GET /v1/products/:id: compatible schema change; PATCH /v1/products/:id: compatible schema change) | orm-explicit-select n/a no Prisma/Drizzle queries on users | no-console pass 11/11 files\nverdict 100% -> all checks green"
+    }
+  ],
+  "verdictPct": 100,
+  "writtenFiles": [
+    "src/routes/products.ts",
+    "src/schemas/products.ts",
+    "src/store/products.ts",
+    "tests/products.test.ts"
+  ],
+  "redGreenLedger": [
+    {
+      "testFile": "tests/categories.test.ts",
+      "status": "pass",
+      "at": "2026-11-10T06:51:09.330Z",
+      "everRed": false
+    },
+    {
+      "testFile": "tests/products.test.ts",
+      "status": "pass",
+      "at": "2026-11-10T06:51:09.330Z",
+      "everRed": true
+    }
+  ],
+  "hookBlocks": 0,
+  "hookEvents": [
+    {
+      "turn": 3,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 3,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 3,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 3,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 3,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "edit_file",
+      "decision": "record",
+      "feedback": "tsc: 2 error(s) in tests/products.test.ts:\ntests/products.test.ts(48,20): error TS2339: Property 'status' does not exist on type '{ id: string; sku: string; name: string; priceCents: number; categoryId: string | null; createdAt: string; updatedAt: string; }'.\ntests/products.test.ts(53,20): error TS2339: Property 'status' does not exist on type '{ id: string; sku: string; name: string; priceCents: number; categoryId: string | null; createdAt: string; updatedAt: string; }'."
+    },
+    {
+      "turn": 6,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "record",
+      "feedback": "observed red: tests/products.test.ts"
+    },
+    {
+      "turn": 6,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 6,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 8,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 8,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 8,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "record",
+      "feedback": "observed red: tests/products.test.ts"
+    },
+    {
+      "turn": 8,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 8,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 9,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 9,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 9,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "record",
+      "feedback": "observed red: tests/products.test.ts"
+    },
+    {
+      "turn": 9,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 9,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 11,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 11,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 11,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "record",
+      "feedback": "observed red: tests/products.test.ts"
+    },
+    {
+      "turn": 11,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 11,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 12,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 12,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 12,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "record",
+      "feedback": "observed red: tests/products.test.ts"
+    },
+    {
+      "turn": 12,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 12,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "edit_file",
+      "decision": "record",
+      "feedback": "tsc: 2 error(s) in src/routes/products.ts:\nsrc/routes/products.ts(26,18): error TS2339: Property 'status' does not exist on type '{ limit: number; cursor?: string | undefined; categoryId?: string | undefined; }'.\nsrc/routes/products.ts(26,61): error TS2339: Property 'status' does not exist on type '{ limit: number; cursor?: string | undefined; categoryId?: string | undefined; }'."
+    },
+    {
+      "turn": 14,
+      "hook": "path-guard",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 14,
+      "hook": "secret-scan",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 14,
+      "hook": "observed-red",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "record",
+      "feedback": "observed red: tests/products.test.ts"
+    },
+    {
+      "turn": 14,
+      "hook": "escape-hatches",
+      "phase": "pre",
+      "tool": "edit_file",
+      "decision": "pass"
+    },
+    {
+      "turn": 14,
+      "hook": "typecheck-on-write",
+      "phase": "post",
+      "tool": "edit_file",
+      "decision": "pass"
+    }
+  ],
+  "honesty": {
+    "proven": [
+      "tests: 2/2 test files pass",
+      "observed-red: 3/3 written source files have an observed-red covering test",
+      "standards: zod-boundary pass 8/8 handlers | zod-infer pass 11/11 types | problem-json pass 11/11 error paths | problem-json:runtime pass 10/10 probes | tsc --strict pass 0 errors | strict-types pass 13/13 files | rest-conventions pass 8/8 routes | contract-drift pass 8/8 routes (additive: GET /v1/products: compatible schema change; POST /v1/products: compatible schema change; GET /v1/products/:id: compatible schema change; PATCH /v1/products/:id: compatible schema change) | orm-explicit-select n/a no Prisma/Drizzle queries on users | no-console pass 11/11 files"
+    ],
+    "failed": [],
+    "unproven": [],
+    "notApplicable": [
+      "orm-explicit-select: no Prisma/Drizzle queries on users"
+    ]
+  },
+  "tokenReport": "tokens/sample-api-change-openai-2026-11-10T06-49-41.json",
+  "contractSnapshot": "runs/sample-api-change-openai-2026-11-10T06-49-41/contract.before.json"
+}
