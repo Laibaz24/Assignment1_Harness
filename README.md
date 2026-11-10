@@ -95,6 +95,3 @@ sf-harness has no contract gate. Before a brownfield run, the harness derives th
 - **Pull request:** the real-model evidence (`generated/`, `runs/`, `tokens/`) is delivered as a PR against `main`.
 - **Placeholder inputs:** `tasks/*.yaml` and `tests/fixtures/sample-api` stand in for the official task file and sample repo. To switch, point a task's `source` at the provided repo. No harness code changes.
 
-## Team
-
-- _Name_: _what they built_ (fill in)
