@@ -1,0 +1,52 @@
+{
+  "runId": "users-api-claude-2026-11-10T06-41-52",
+  "task": "users-api",
+  "mode": "greenfield",
+  "driver": "claude",
+  "model": "anthropic/claude-sonnet-5.5",
+  "tokenMode": "jit",
+  "workspace": "generated/users-api",
+  "green": false,
+  "turns": 40,
+  "gates": [
+    {
+      "name": "tests",
+      "status": "unproven",
+      "detail": "no test files found"
+    },
+    {
+      "name": "observed-red",
+      "status": "fail",
+      "detail": "no source file was written in this run"
+    },
+    {
+      "name": "standards",
+      "status": "pass",
+      "detail": "zod-boundary n/a nothing to check | zod-infer pass 3/3 types | problem-json pass 7/7 error paths | problem-json:runtime pass 1/1 probes | tsc --strict pass 0 errors | strict-types pass 5/5 files | rest-conventions n/a nothing to check | contract-drift n/a no baseline contract (greenfield, or pass --contract <file>) | orm-explicit-select n/a no Prisma/Drizzle queries on users | no-console pass 5/5 files\nverdict 100% -> all checks green"
+    }
+  ],
+  "verdictPct": 100,
+  "writtenFiles": [],
+  "redGreenLedger": [],
+  "hookBlocks": 0,
+  "hookEvents": [],
+  "honesty": {
+    "proven": [
+      "standards: zod-boundary n/a nothing to check | zod-infer pass 3/3 types | problem-json pass 7/7 error paths | problem-json:runtime pass 1/1 probes | tsc --strict pass 0 errors | strict-types pass 5/5 files | rest-conventions n/a nothing to check | contract-drift n/a no baseline contract (greenfield, or pass --contract <file>) | orm-explicit-select n/a no Prisma/Drizzle queries on users | no-console pass 5/5 files"
+    ],
+    "failed": [
+      "observed-red: no source file was written in this run"
+    ],
+    "unproven": [
+      "tests: no test files found"
+    ],
+    "notApplicable": [
+      "zod-boundary: nothing to check",
+      "rest-conventions: nothing to check",
+      "contract-drift: no baseline contract (greenfield, or pass --contract <file>)",
+      "orm-explicit-select: no Prisma/Drizzle queries on users"
+    ]
+  },
+  "tokenReport": "tokens/users-api-claude-2026-11-10T06-41-52.json",
+  "contractSnapshot": null
+}

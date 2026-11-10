@@ -1,0 +1,13 @@
+$ vitest run --root C:\Users\Laiba Zahid\OneDrive - Software Finder\Documents\Assignment1\generated\sample-api --reporter=default --reporter=json --outputFile.json=C:\Users\LAIBAZ~1\AppData\Local\Temp\harness-vitest-XPrWBi\report.json
+exit 0
+RUN  v4.1.12 C:/Users/Laiba Zahid/OneDrive - Software Finder/Documents/Assignment1/generated/sample-api
+
+ ✓ tests/categories.test.ts (2 tests) 117ms
+ ✓ tests/products.test.ts (5 tests) 185ms
+
+ Test Files  2 passed (2)
+      Tests  7 passed (7)
+   Start at  11:49:16
+   Duration  1.49s (transform 260ms, setup 0ms, import 2.03s, tests 302ms, environment 0ms)
+
+JSON report written to C:/Users/LAIBAZ~1/AppData/Local/Temp/harness-vitest-XPrWBi/report.json

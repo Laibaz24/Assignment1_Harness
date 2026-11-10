@@ -1,0 +1,43 @@
+# per-file results (C:/Users/Laiba Zahid/OneDrive - Software Finder/Documents/Assignment1/generated/users-api)
+zod-boundary          pass     src/routes/users.ts
+zod-infer             pass     src/lib/idempotency.ts
+zod-infer             pass     src/lib/pagination.ts
+zod-infer             pass     src/lib/problem.ts
+zod-infer             pass     src/schemas/users.ts
+problem-json          pass     src/lib/problem.ts
+problem-json          pass     src/lib/idempotency.ts
+problem-json          pass     src/lib/pagination.ts
+problem-json          pass     src/store/users.ts
+problem-json:runtime  pass     runtime
+tsc --strict          pass     tsconfig.json
+strict-types          pass     src/app.ts
+strict-types          pass     src/server.ts
+strict-types          pass     src/lib/idempotency.ts
+strict-types          pass     src/lib/pagination.ts
+strict-types          pass     src/lib/problem.ts
+strict-types          pass     src/routes/users.ts
+strict-types          pass     src/schemas/users.ts
+strict-types          pass     src/store/users.ts
+strict-types          pass     tests/users.test.ts
+rest-conventions      pass     src/routes/users.ts
+no-console            pass     src/app.ts
+no-console            pass     src/server.ts
+no-console            pass     src/lib/idempotency.ts
+no-console            pass     src/lib/pagination.ts
+no-console            pass     src/lib/problem.ts
+no-console            pass     src/routes/users.ts
+no-console            pass     src/schemas/users.ts
+no-console            pass     src/store/users.ts
+
+# summary
+zod-boundary          pass     5/5 handlers
+zod-infer             pass     7/7 types
+problem-json          pass     12/12 error paths
+problem-json:runtime  pass     7/7 probes
+tsc --strict          pass     0 errors
+strict-types          pass     9/9 files
+rest-conventions      pass     5/5 routes
+contract-drift        n/a      no baseline contract (greenfield, or pass --contract <file>)
+orm-explicit-select   n/a      no Prisma/Drizzle queries on users
+no-console            pass     8/8 files
+verdict               100%     -> all checks green

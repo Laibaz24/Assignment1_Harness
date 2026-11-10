@@ -1,0 +1,114 @@
+{
+  "runId": "sample-api-change-claude-2026-11-10T06-48-42",
+  "task": "sample-api-change",
+  "driver": "claude",
+  "model": "anthropic/claude-sonnet-5.5",
+  "mode": "jit",
+  "baseline": {
+    "definition": "Same task, same driver, context fetchers and compaction disabled: whole workspace + full standards document front-loaded into the system prompt, raw tool output, no history compaction.",
+    "method": "shadow baseline on the same trajectory; baseline and actual both counted with local-tokenizer-estimate"
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "actualInputTokens": 1108,
+      "providerReportedInputTokens": 2191,
+      "baselineInputTokens": 8235,
+      "outputTokens": 50,
+      "costUsd": 0.004882,
+      "tools": [
+        "api_map",
+        "contract_status"
+      ],
+      "reductionPct": 86.5
+    },
+    {
+      "turn": 2,
+      "actualInputTokens": 1455,
+      "providerReportedInputTokens": 2895,
+      "baselineInputTokens": 8582,
+      "outputTokens": 211,
+      "costUsd": 0.0079,
+      "tools": [
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "reductionPct": 83
+    },
+    {
+      "turn": 3,
+      "actualInputTokens": 4227,
+      "providerReportedInputTokens": 6902,
+      "baselineInputTokens": 11354,
+      "outputTokens": 683,
+      "costUsd": 0.020634,
+      "tools": [
+        "edit_file",
+        "run_tests"
+      ],
+      "reductionPct": 62.8
+    },
+    {
+      "turn": 4,
+      "actualInputTokens": 3331,
+      "providerReportedInputTokens": 5692,
+      "baselineInputTokens": 12411,
+      "outputTokens": 1067,
+      "costUsd": 0.022054,
+      "tools": [
+        "edit_file",
+        "edit_file",
+        "edit_file",
+        "edit_file",
+        "edit_file",
+        "edit_file"
+      ],
+      "reductionPct": 73.2
+    },
+    {
+      "turn": 5,
+      "actualInputTokens": 1913,
+      "providerReportedInputTokens": 4341,
+      "baselineInputTokens": 12913,
+      "outputTokens": 112,
+      "costUsd": 0.009802,
+      "tools": [
+        "run_tests",
+        "run_checks",
+        "contract_status"
+      ],
+      "reductionPct": 85.2
+    },
+    {
+      "turn": 6,
+      "actualInputTokens": 2241,
+      "providerReportedInputTokens": 4952,
+      "baselineInputTokens": 13823,
+      "outputTokens": 156,
+      "costUsd": 0.011464,
+      "tools": [
+        "finish"
+      ],
+      "reductionPct": 83.8
+    }
+  ],
+  "totals": {
+    "turns": 6,
+    "baselineInputTokens": 67318,
+    "actualInputTokens": 14275,
+    "providerReportedInputTokens": 26973,
+    "reductionPct": 78.8,
+    "peakBaselineContext": 13823,
+    "peakActualContext": 4227,
+    "outputTokens": 2279,
+    "costUsd": 0.0767
+  },
+  "mechanisms": [
+    "JIT context: no repository content at session start; api_map / outline / read_file(line ranges) / search / read_standard fetch on demand",
+    "compact tool returns: pass/fail lines and summaries; raw logs written to runs/<run>/logs and referenced by path",
+    "history compaction: older tool results shrink to one line, older write arguments shrink to a size marker",
+    "rules live in hooks/checks (zero prompt tokens until they fire); system prompt is ~12 lines"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-07T11:33:28.620Z",
+  "ok": false,
+  "steps": [
+    {
+      "step": "run verdict",
+      "status": "pass",
+      "detail": "run report is green"
+    },
+    {
+      "step": "tests (fresh)",
+      "status": "pass",
+      "detail": "1 pass, 0 fail"
+    },
+    {
+      "step": "standards (fresh)",
+      "status": "pass",
+      "detail": "verdict 100%"
+    },
+    {
+      "step": "git",
+      "status": "unproven",
+      "detail": "harness root is not a git repository; nothing shipped"
+    }
+  ]
+}

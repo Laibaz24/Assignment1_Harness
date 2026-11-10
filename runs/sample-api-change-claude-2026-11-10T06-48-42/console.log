@@ -1,0 +1,26 @@
+run sample-api-change-claude-2026-11-10T06-48-42
+driver=claude model=anthropic/claude-sonnet-5.5 mode=jit workspace=generated/sample-api
+registry: 12 tools, 2 extra rules, 0 extra hooks
+contract snapshot: 8 routes -> runs/sample-api-change-claude-2026-11-10T06-48-42/contract.before.json
+[turn 1] api_map -> ok
+[turn 1] contract_status -> ok
+[turn 2] read_file -> ok
+[turn 2] read_file -> ok
+[turn 2] read_file -> ok
+[turn 2] read_file -> ok
+[turn 3] edit_file tests/products.test.ts -> ok (+hook feedback)
+[turn 3] run_tests -> ok
+[turn 4] edit_file src/schemas/products.ts -> ok
+[turn 4] edit_file src/schemas/products.ts -> ok
+[turn 4] edit_file src/schemas/products.ts -> ok
+[turn 4] edit_file src/store/products.ts -> ok
+[turn 4] edit_file src/store/products.ts -> ok
+[turn 4] edit_file src/routes/products.ts -> ok
+[turn 5] run_tests -> ok
+[turn 5] run_checks -> ok
+[turn 5] contract_status -> ok
+[turn 6] finish -> ok
+[turn 6] finish -> gates GREEN
+verdict: GREEN after 6 turns
+token report: tokens/sample-api-change-claude-2026-11-10T06-48-42.json
+run report: runs/sample-api-change-claude-2026-11-10T06-48-42/report.md

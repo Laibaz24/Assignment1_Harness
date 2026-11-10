@@ -1,0 +1,4 @@
+./package.json:12: "express": "^5.1.0",
+./package.json:13: "zod": "^4.1.0"
+./package.json:19: "supertest": "^7.1.0",
+./package.json:22: "vitest": "^4.0.0"

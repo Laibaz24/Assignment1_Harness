@@ -1,0 +1,20 @@
+run sample-api-change-replay-2026-11-07T11-30-40
+driver=replay model=scripted-replay mode=jit workspace=generated/sample-api
+registry: 12 tools, 2 extra rules, 0 extra hooks
+contract snapshot: 8 routes -> runs/sample-api-change-replay-2026-11-07T11-30-40/contract.before.json
+[turn 1] api_map -> ok
+[turn 2] outline -> ok
+[turn 2] read_standard -> ok
+[turn 3] edit_file src/schemas/products.ts -> BLOCKED by observed-red
+[turn 4] write_file tests/products-status.test.ts -> ok
+[turn 5] run_tests -> ok
+[turn 6] write_file src/schemas/products.ts -> ok
+[turn 6] write_file src/store/products.ts -> ok
+[turn 6] write_file src/routes/products.ts -> ok
+[turn 7] run_tests -> ok
+[turn 8] run_checks -> ok
+[turn 9] finish -> ok
+[turn 9] finish -> gates GREEN
+verdict: GREEN after 9 turns
+token report: tokens/sample-api-change-replay-2026-11-07T11-30-40.json
+run report: runs/sample-api-change-replay-2026-11-07T11-30-40/report.md

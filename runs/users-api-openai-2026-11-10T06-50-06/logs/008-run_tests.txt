@@ -1,0 +1,10 @@
+RUN  v4.1.12 C:/Users/Laiba Zahid/OneDrive - Software Finder/Documents/Assignment1/generated/users-api
+
+ ✓ tests/users.test.ts (4 tests) 169ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  11:51:40
+   Duration  1.10s (transform 102ms, setup 0ms, import 675ms, tests 169ms, environment 0ms)
+
+JSON report written to C:/Users/LAIBAZ~1/AppData/Local/Temp/harness-vitest-4Jmbu5/report.json

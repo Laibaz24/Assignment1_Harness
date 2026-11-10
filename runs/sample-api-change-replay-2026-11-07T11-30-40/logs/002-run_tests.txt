@@ -1,0 +1,83 @@
+RUN  v4.1.12 C:/Users/Laiba Zahid/OneDrive - Software Finder/Documents/Assignment1/generated/sample-api
+
+ ❯ tests/products-status.test.ts (3 tests | 3 failed) 118ms
+     × defaults new products to active 96ms
+     × archives a product with PATCH and filters the list by status 10ms
+     × rejects an unknown status with a 422 problem 10ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  16:30:46
+   Duration  1.55s (transform 157ms, setup 0ms, import 1.03s, tests 118ms, environment 0ms)
+
+JSON report written to C:/Users/LAIBAZ~1/AppData/Local/Temp/harness-vitest-orjoFr/report.json
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/products-status.test.ts > product archive status > defaults new products to active
+ZodError: [
+  {
+    "code": "invalid_value",
+    "values": [
+      "active",
+      "archived"
+    ],
+    "path": [
+      "status"
+    ],
+    "message": "Invalid option: expected one of \"active\"|\"archived\""
+  }
+]
+ ❯ tests/products-status.test.ts:16:23
+     14|     const res = await request(createApp()).post('/v1/products').send({…
+     15|     expect(res.status).toBe(201);
+     16|     expect(StatusView.parse(res.body).status).toBe('active');
+       |                       ^
+     17|   });
+     18|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/products-status.test.ts > product archive status > archives a product with PATCH and filters the list by status
+ZodError: [
+  {
+    "code": "invalid_value",
+    "values": [
+      "active",
+      "archived"
+    ],
+    "path": [
+      "status"
+    ],
+    "message": "Invalid option: expected one of \"active\"|\"archived\""
+  }
+]
+ ❯ tests/products-status.test.ts:21:26
+     19|   it('archives a product with PATCH and filters the list by status', a…
+     20|     const app = createApp();
+     21|     const a = StatusView.parse((await request(app).post('/v1/products'…
+       |                          ^
+     22|     await request(app).post('/v1/products').send({ sku: 'ARC-003', nam…
+     23|     const patched = await request(app).patch(`/v1/products/${a.id}`).s…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/products-status.test.ts > product archive status > rejects an unknown status with a 422 problem
+AssertionError: expected 200 to be 422 // Object.is equality
+
+- Expected
++ Received
+
+- 422
++ 200
+
+ ❯ tests/products-status.test.ts:34:24
+     32|   it('rejects an unknown status with a 422 problem', async () => {
+     33|     const res = await request(createApp()).get('/v1/products?status=de…
+     34|     expect(res.status).toBe(422);
+       |                        ^
+     35|     expect(res.headers['content-type']).toMatch(/^application\/problem…
+     36|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯

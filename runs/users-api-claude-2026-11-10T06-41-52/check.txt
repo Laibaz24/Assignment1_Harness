@@ -1,0 +1,32 @@
+# per-file results (C:/Users/Laiba Zahid/OneDrive - Software Finder/Documents/Assignment1/generated/users-api)
+zod-infer             pass     src/lib/idempotency.ts
+zod-infer             pass     src/lib/pagination.ts
+zod-infer             pass     src/lib/problem.ts
+problem-json          pass     src/lib/problem.ts
+problem-json          pass     src/lib/idempotency.ts
+problem-json          pass     src/lib/pagination.ts
+problem-json:runtime  pass     runtime
+tsc --strict          pass     tsconfig.json
+strict-types          pass     src/app.ts
+strict-types          pass     src/server.ts
+strict-types          pass     src/lib/idempotency.ts
+strict-types          pass     src/lib/pagination.ts
+strict-types          pass     src/lib/problem.ts
+no-console            pass     src/app.ts
+no-console            pass     src/server.ts
+no-console            pass     src/lib/idempotency.ts
+no-console            pass     src/lib/pagination.ts
+no-console            pass     src/lib/problem.ts
+
+# summary
+zod-boundary          n/a      nothing to check
+zod-infer             pass     3/3 types
+problem-json          pass     7/7 error paths
+problem-json:runtime  pass     1/1 probes
+tsc --strict          pass     0 errors
+strict-types          pass     5/5 files
+rest-conventions      n/a      nothing to check
+contract-drift        n/a      no baseline contract (greenfield, or pass --contract <file>)
+orm-explicit-select   n/a      no Prisma/Drizzle queries on users
+no-console            pass     5/5 files
+verdict               100%     -> all checks green
